@@ -9,16 +9,16 @@ AL,Geothermal,141
 AL,Hydropower,39309
 AL,Solar Energy,1823 per MMBtu
 AL,Wind Energy,0
-AR,Biomass,$72939
+AR,Biomass,"$72,939 "
 AR,Geothermal,808 USD
 AR,Hydropower,13746
-AR,Solar Energy,$2221
+AR,Solar Energy,"$2,221 "
 AR,Wind Energy,~0
 AZ,Biomass,35287
 AZ,Geothermal,345
 AZ,Hydropower,20379
-AZ,Solar Energy,$37795
-AZ,Wind Energy,$5460
+AZ,Solar Energy,"$37,795 "
+AZ,Wind Energy,"$5,460 "
 CA,Biomass,462829
 CA,Geothermal,40106 USD
 CA,Hydropower,≈50080
@@ -30,141 +30,141 @@ CO,Hydropower,5453
 CO,Solar Energy,9801
 CO,Wind Energy,51609
 CT,Biomass,42781
-CT,Geothermal,$21
+CT,Geothermal,$21 
 CT,Hydropower,1629
-CT,Solar Energy,$4831
+CT,Solar Energy,"$4,831 "
 CT,Wind Energy,≈44
-DC,Biomass,$1897
-DC,Geothermal,$22
+DC,Biomass,"$1,897 "
+DC,Geothermal,$22 
 DC,Hydropower,0
 DC,Solar Energy,568 USD
 DC,Wind Energy,0
 DE,Biomass,5995
 DE,Geothermal,430
 DE,Hydropower,0
-DE,Solar Energy,$709
+DE,Solar Energy,$709 
 DE,Wind Energy,17
 FL,Biomass,≈221885
-FL,Geothermal,$10056
-FL,Hydropower,$858
+FL,Geothermal,"$10,056 "
+FL,Hydropower,$858 
 FL,Solar Energy,64491
-FL,Wind Energy,$0
+FL,Wind Energy,$0 
 GA,Biomass,258089
-GA,Geothermal,$315
+GA,Geothermal,$315 
 GA,Hydropower,12491
 GA,Solar Energy,18218
 GA,Wind Energy,≈0
 HI,Biomass,8816
 HI,Geothermal,635
-HI,Hydropower,$392
+HI,Hydropower,$392 
 HI,Solar Energy,8046
 HI,Wind Energy,2245 USD
-IA,Biomass,$256935
+IA,Biomass,"$256,935 "
 IA,Geothermal,1281
 IA,Hydropower,3344
 IA,Solar Energy,1647
-IA,Wind Energy,$126579
+IA,Wind Energy,"$126,579 "
 ID,Biomass,33826
-ID,Geothermal,$1819
+ID,Geothermal,"$1,819 "
 ID,Hydropower,27280
-ID,Solar Energy,$2358
-ID,Wind Energy,$9145
+ID,Solar Energy,"$2,358 "
+ID,Wind Energy,"$9,145 "
 IL,Biomass,150154
 IL,Geothermal,2042
-IL,Hydropower,$439
+IL,Hydropower,$439 
 IL,Solar Energy,6190
 IL,Wind Energy,65282 est.
-IN,Biomass,$121697
+IN,Biomass,"$121,697 "
 IN,Geothermal,4647
-IN,Hydropower,$1321
-IN,Solar Energy,$2852
+IN,Hydropower,"$1,321 "
+IN,Solar Energy,"$2,852 "
 IN,Wind Energy,26808
 KS,Biomass,46363
 KS,Geothermal,974
 KS,Hydropower,102
-KS,Solar Energy,$444
+KS,Solar Energy,$444 
 KS,Wind Energy,87667
 KY,Biomass,51928
-KY,Geothermal,$2712
+KY,Geothermal,"$2,712 "
 KY,Hydropower,16638
 KY,Solar Energy,465
 KY,Wind Energy,≈0
 LA,Biomass,128794
-LA,Geothermal,$1842
+LA,Geothermal,"$1,842 "
 LA,Hydropower,3785
 LA,Solar Energy,1484
-LA,Wind Energy,$0
+LA,Wind Energy,$0 
 MA,Biomass,≈55621
 MA,Geothermal,859
 MA,Hydropower,3813
 MA,Solar Energy,14366
-MA,Wind Energy,$712
+MA,Wind Energy,$712 
 MD,Biomass,37402
-MD,Geothermal,$570
-MD,Hydropower,$7224
+MD,Geothermal,$570 
+MD,Hydropower,"$7,224 "
 MD,Solar Energy,5772
-MD,Wind Energy,$1765
+MD,Wind Energy,"$1,765 "
 ME,Biomass,76566
-ME,Geothermal,$72
-ME,Hydropower,$8670
+ME,Geothermal,$72 
+ME,Hydropower,"$8,670 "
 ME,Solar Energy,1153
 ME,Wind Energy,8681
-MI,Biomass,$155433
+MI,Biomass,"$155,433 "
 MI,Geothermal,5193
 MI,Hydropower,4571
 MI,Solar Energy,2616
 MI,Wind Energy,26262 per MMBtu
 MN,Biomass,163547
-MN,Geothermal,$1075
-MN,Hydropower,$2317
+MN,Geothermal,"$1,075 "
+MN,Hydropower,"$2,317 "
 MN,Solar Energy,7304
-MN,Wind Energy,$41870
+MN,Wind Energy,"$41,870 "
 MO,Biomass,58533
-MO,Geothermal,$352
+MO,Geothermal,$352 
 MO,Hydropower,5792
 MO,Solar Energy,1906
 MO,Wind Energy,22295
 MS,Biomass,≈63655
-MS,Geothermal,$958
+MS,Geothermal,$958 
 MS,Hydropower,0
 MS,Solar Energy,1520
 MS,Wind Energy,0
-MT,Biomass,$12290
+MT,Biomass,"$12,290 "
 MT,Geothermal,337
-MT,Hydropower,$31590
+MT,Hydropower,"$31,590 "
 MT,Solar Energy,269
-MT,Wind Energy,$11849
+MT,Wind Energy,"$11,849 "
 NC,Biomass,138045
 NC,Geothermal,967
-NC,Hydropower,$19833
+NC,Hydropower,"$19,833 "
 NC,Solar Energy,36370
 NC,Wind Energy,1756
 ND,Biomass,33921
 ND,Geothermal,978
 ND,Hydropower,6787
-ND,Solar Energy,$9
+ND,Solar Energy,$9 
 ND,Wind Energy,50959 USD
 NE,Biomass,120181
-NE,Geothermal,$1212
+NE,Geothermal,"$1,212 "
 NE,Hydropower,3832
-NE,Solar Energy,$322
+NE,Solar Energy,$322 
 NE,Wind Energy,32728
-NH,Biomass,$32487
+NH,Biomass,"$32,487 "
 NH,Geothermal,29
-NH,Hydropower,$3497
+NH,Hydropower,"$3,497 "
 NH,Solar Energy,745
 NH,Wind Energy,≈1720
 NJ,Biomass,53825
 NJ,Geothermal,466
-NJ,Hydropower,$62
+NJ,Hydropower,$62 
 NJ,Solar Energy,15619
-NJ,Wind Energy,$67
+NJ,Wind Energy,$67 
 NM,Biomass,17390
-NM,Geothermal,$542
+NM,Geothermal,$542 
 NM,Hydropower,419
-NM,Solar Energy,$7757
-NM,Wind Energy,$36101
-NV,Biomass,$13735
+NM,Solar Energy,"$7,757 "
+NM,Wind Energy,"$36,101 "
+NV,Biomass,"$13,735 "
 NV,Geothermal,14914
 NV,Hydropower,6634
 NV,Solar Energy,27204
@@ -172,57 +172,57 @@ NV,Wind Energy,1160 USD
 NY,Biomass,135921
 NY,Geothermal,1185
 NY,Hydropower,98148
-NY,Solar Energy,$14542
+NY,Solar Energy,"$14,542 "
 NY,Wind Energy,14182
 OH,Biomass,129100
 OH,Geothermal,3435
-OH,Hydropower,$1973
+OH,Hydropower,"$1,973 "
 OH,Solar Energy,3524
 OH,Wind Energy,≈8826
 OK,Biomass,56130
 OK,Geothermal,24
 OK,Hydropower,9438
 OK,Solar Energy,466
-OK,Wind Energy,$111028
+OK,Wind Energy,"$111,028 "
 OR,Biomass,89886
 OR,Geothermal,1856
 OR,Hydropower,94374
 OR,Solar Energy,7437
-OR,Wind Energy,$31990
+OR,Wind Energy,"$31,990 "
 PA,Biomass,151173
-PA,Geothermal,$2162
+PA,Geothermal,"$2,162 "
 PA,Hydropower,10696
 PA,Solar Energy,3768
 PA,Wind Energy,11789 est.
-RI,Biomass,$8808
+RI,Biomass,"$8,808 "
 RI,Geothermal,57
 RI,Hydropower,15
 RI,Solar Energy,2331
 RI,Wind Energy,587
 SC,Biomass,125195
-SC,Geothermal,$648
+SC,Geothermal,$648 
 SC,Hydropower,8679
-SC,Solar Energy,$9273
-SC,Wind Energy,$0
+SC,Solar Energy,"$9,273 "
+SC,Wind Energy,$0 
 SD,Biomass,76673
 SD,Geothermal,1868
 SD,Hydropower,17000
 SD,Solar Energy,19
-SD,Wind Energy,$31822
+SD,Wind Energy,"$31,822 "
 TN,Biomass,96952
 TN,Geothermal,213
-TN,Hydropower,$37093
-TN,Solar Energy,$1487
+TN,Hydropower,"$37,093 "
+TN,Solar Energy,"$1,487 "
 TN,Wind Energy,96
-TX,Biomass,$249311
+TX,Biomass,"$249,311 "
 TX,Geothermal,2478
 TX,Hydropower,3693
-TX,Solar Energy,$59311
-TX,Wind Energy,$339406
+TX,Solar Energy,"$59,311 "
+TX,Wind Energy,"$339,406 "
 UT,Biomass,15136
 UT,Geothermal,2240
 UT,Hydropower,1684
-UT,Solar Energy,$14174
+UT,Solar Energy,"$14,174 "
 UT,Wind Energy,2816 USD
 VA,Biomass,155498
 VA,Geothermal,1701
@@ -235,27 +235,27 @@ VT,Hydropower,3729
 VT,Solar Energy,1322
 VT,Wind Energy,1154
 WA,Biomass,116292
-WA,Geothermal,$1136
-WA,Hydropower,$243546
-WA,Solar Energy,$1354
+WA,Geothermal,"$1,136 "
+WA,Hydropower,"$243,546 "
+WA,Solar Energy,"$1,354 "
 WA,Wind Energy,31724
 WI,Biomass,130446
 WI,Geothermal,615
 WI,Hydropower,7318
 WI,Solar Energy,2119
 WI,Wind Energy,5437
-WV,Biomass,$14909
+WV,Biomass,"$14,909 "
 WV,Geothermal,32
 WV,Hydropower,5816
 WV,Solar Energy,129
 WV,Wind Energy,5542
-WY,Biomass,$4876
+WY,Biomass,"$4,876 "
 WY,Geothermal,663
 WY,Hydropower,2697
 WY,Solar Energy,674
 WY,Wind Energy,28824 USD
 US,Biomass,4752482
 US,Geothermal,118007
-US,Hydropower,$858407
+US,Hydropower,"$858,407 "
 US,Solar Energy,626863
-US,Wind Energy,$1290407
+US,Wind Energy,"$1,290,407 "

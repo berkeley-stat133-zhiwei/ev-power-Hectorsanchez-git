@@ -1,34 +1,228 @@
 ---
-title: "EV Power - Lab 4 Project Report"
+title: "EV Power - Report"
+author: Hector Sanchez
 format: typst
+fig-align: center
+linestretch: 1.15
 ---
 
-# Example Solution 1
-
-## **Part 0: libraries**
+# Part 5: Report
 
 ```{r}
+#| echo: FALSE
+#Part 1:Defining Research Question
+```
+
+**Chosen Question:** The main question that will be answered through this report is: Is there a region in America that heavier emphasis around electric vehicles? And what ever that region is, do those places have higher energy prices?
+
+---
+
+# California’s EV Leadership in the US
+```{r}
+#| message: FALSE
+#| echo: FALSE
+#Part 0: Libraries
+library(tidyverse)
+library(sf)
+library(rnaturalearth)
+```
+
+```{r}
+#| echo: FALSE
+#Part 2: Data Preparation and Cleaning/Part 3: Joining / Pivoting Datasets for Analysis
+renew21 <- read.csv("data/renew-use-2021.csv")
+renew22 <- read.csv("data/renew-use-2022.csv")
+renew23 <- read.csv("data/renew-use-2023.csv")
+total21 <- read.csv("data/total-use-2021.csv")
+total22 <- read.csv("data/total-use-2022.csv")
+total23 <- read.csv("data/total-use-2023.csv")
+ev_reg <- read.csv("data/ev-registrations-by-state-2023.csv")
+av_energy <- read.csv("data/av-energy-price-2021-2023.csv")
+av_energy <- av_energy |>
+    rename(ave_pri_dol_to_mil = Total.energy.average.price..dollars.per.million.Btu...) 
+fix_av_energy <- av_energy |>
+    slice(-(1:2)) |>
+    slice(-52) |>
+    mutate(state = str_sub(ave_pri_dol_to_mil, 1, 2))
+fix_av_energy <- fix_av_energy |>
+    mutate(all_price = str_extract_all(ave_pri_dol_to_mil, "[0-9.]+"))
+fix_av_energy <- fix_av_energy |>
+  mutate(
+    `2021` = parse_number(sapply(all_price, `[`, 1)),
+    `2022` = parse_number(sapply(all_price, `[`, 2)),
+    `2023` = parse_number(sapply(all_price, `[`, 3))
+  )
+fix_av_energy <- fix_av_energy |>
+    select(2,4,5,6)
+
+sum_ev_reg <- ev_reg |>
+    slice(54)
+fix_ev_reg <- ev_reg |>
+    mutate(state = state.abb[match(electric.vehicle.registrations_by_state..2023., state.name)]) |>
+    select(2,3) |>
+    slice(-(1:2)) |>
+    slice(-52) |>
+    rename(count = X)
+fix_ev_reg <- fix_ev_reg |>
+    mutate(count = parse_number(count)) 
+fix_ev_reg <- fix_ev_reg |>
+    mutate(state = if_else(is.na(state), "DC", state)) |>
+    select(state, count)
+
+renew21 <- renew21 |> rename(state = State)
+renew22 <- renew22 |> rename(state = State)
+renew23 <- renew23 |> rename(state = State)
+
+renew21 <- renew21 %>%
+  mutate(state = str_to_upper(state))
+
+renew22 <- renew22 %>%
+  mutate(state = str_to_upper(state))
+
+renew23 <- renew23 %>%
+  mutate(state = str_to_upper(state))
+
+combine_renew <- renew21 |>
+    full_join(renew22, by = c("state", "Energy_Source")) |>
+    full_join(renew23, by = c("state", "Energy_Source"))
+
+combine_renew <- combine_renew |>
+  mutate(Renewable_Use_2021 = parse_number(Renewable_Use_2021))
+
+combine_renew <- combine_renew |>
+  mutate(Renewable_Use_2022 = parse_number(Renewable_Use_2022))
+
+combine_renew <- combine_renew |>
+  mutate(Renewable_Use_2023 = parse_number(Renewable_Use_2023))
+
+total21_long <- total21 |>
+    pivot_longer(
+        cols = -"Energy_Source",
+        names_to = "state",
+        values_to = "Value"
+        ) |>
+    pivot_wider(
+        names_from = "Energy_Source",
+        values_from = Value
+    )
+total22_long <- total22 |>
+    pivot_longer(
+        cols = -"Energy_Source",
+        names_to = "state",
+        values_to = "Value"
+        ) |>
+    pivot_wider(
+        names_from = "Energy_Source",
+        values_from = Value
+    )
+total23_long <- total23 |>
+    pivot_longer(
+        cols = -"Energy_Source",
+        names_to = "state",
+        values_to = "Value"
+        ) |>
+    pivot_wider(
+        names_from = "Energy_Source",
+        values_from = Value
+    )
+total21_long <- total21_long |>
+  rename(
+    coal = Coal,
+    petro = `Petroleum (BTU)`,
+    natural_gas = `Natural Gas†`,
+    nuclear_energy = nuclear,
+    total_renew = total_renewable_energy
+  )
+total22_long <- total22_long |>
+  rename(
+    coal = `coal Consumption`,
+    petro = `petroleum (btu)`,
+    natural_gas = `Natural-Gas`,
+    nuclear_energy = `Nuclear Energy†`,
+    total_renew = total_renewables
+  )
+total23_long <- total23_long |>
+  rename(
+    coal = coal_usage,
+    petro = `petroleum (BTU)`,
+    natural_energy = `nuclear-energy †`,
+    natural_gas = `NaturalGas`,
+    total_renew = `total renewable-energy`
+  )
 
 ```
 
-## **Part 1:** **Defining Research Question**
-
-Chosen Question:
-
-## **Part 2: Data Preparation and Cleaning**
 
 ```{r}
+#| echo: FALSE
+#| out-width: 95%
+# **Part 4: Mapping Visualization**
+us <- rnaturalearth::ne_states(country = "United States of America", returnclass = "sf")
+unmatched <- anti_join(fix_ev_reg, us, by = c("state" = "postal"))
+if (nrow(unmatched) > 0) print(unmatched)
 
+us_joined <- us |>
+    left_join(fix_ev_reg, by = c("postal" = "state"))
+
+us_joined <- us_joined |>
+    filter(!name %in% c("Alaska", "Hawaii"))
+
+ggplot(us_joined) +
+  geom_sf(aes(fill = count), color = "white", size = 0.2) +
+  labs(
+    title = "EV Registrations by State",
+    fill = "Registriations",
+  ) +
+    theme_void(base_size = 12) +
+    theme(plot.title = element_text(hjust = .5))
 ```
 
-## **Part 3: Joining / Pivoting Datasets for Analysis**
+**Comment:** California has the highest EV registrations by far, reflecting both market size and policy adoption. Neighboring Western states also show above-median adoption, but the gap with California remains substantial.
+
+---
+
+# California’s Energy Prices
 
 ```{r}
+#| echo: FALSE
+#| out-width: 95%
+fix_av_long <- fix_av_energy |>
+  pivot_longer(
+    cols = -state,
+    names_to = "year",
+    values_to = "avg_energy"
+  ) |>
+  mutate(
+    year = as.integer(year)
+  )
 
+us_energy <- us |>
+  left_join(fix_av_long, by = c("postal" = "state")) |>
+  filter(!name %in% c("Alaska", "Hawaii"))
+
+ggplot(us_energy) +
+  geom_sf(aes(fill = avg_energy), color = "white", size = 0.4) +
+  coord_sf(expand = FALSE) +
+  facet_wrap(~ year, nrow = 1) +
+  labs(
+    title = "Average Energy Consumption by State (2021–2023)",
+    fill  = "Avg Energy Price"
+  ) +
+  theme_void(base_size = 10) +
+  theme(
+    plot.title = element_text(hjust = .5),
+    strip.text = element_text(face = "bold")
+  )
 ```
 
-## **Part 4: Mapping Visualization**
+**Comment:** California not only leads in EV registrations but also sits at or near the top in average energy prices across 2021–2023. This pairing suggests that high EV uptake can coincide with higher energy costs—likely reflecting a mix of policy, grid mix, and broader cost structures.
 
-```{r}
+---
 
-```
+# Final Analysis
+
+California stands out as the leader in EV registrations across the United States,surpassing every other state by a large margin. This reflects a strong combination of policy-driven incentives and environmental awareness that have encouraged residents of California to transition toward electric vehicles.
+
+At the same time, California consistently ranks among the highest in average energy prices from 2021–2023. California is a state that pushes for renewable emissions standards and heavy reliance on clean but costlier energy sources—also contribute to these higher energy costs.
+
+This correlation suggests that regions with aggressive clean-energy and EV initiatives tend to experience higher electricity costs. However, the long-term goal is clear: higher upfront costs today may pave the way for lower emissions, better grid efficiency, and future cost stability as renewable infrastructure matures.
